@@ -1,0 +1,28 @@
+#!/bin/sh
+# wbspec 入口：解析自身真实路径，交给 Node 执行实现文件。
+set -u
+
+SELF="$0"
+while [ -L "$SELF" ]; do
+  DIR=$(cd -P "$(dirname "$SELF")" >/dev/null 2>&1 && pwd)
+  LINK=$(readlink "$SELF")
+  case "$LINK" in
+    /*) SELF="$LINK" ;;
+    *)  SELF="$DIR/$LINK" ;;
+  esac
+done
+BIN_DIR=$(cd -P "$(dirname "$SELF")" >/dev/null 2>&1 && pwd)
+IMPL="$BIN_DIR/wbspec.cjs"
+
+if ! command -v node >/dev/null 2>&1; then
+  echo "wbspec: 未找到 Node.js（需要 >= 18）" >&2
+  echo "wbspec: 处于降级模式，请按 references/protocol/protocol.md 手工执行" >&2
+  exit 127
+fi
+
+if [ ! -f "$IMPL" ]; then
+  echo "wbspec: 实现文件缺失: $IMPL" >&2
+  exit 127
+fi
+
+exec node "$IMPL" "$@"

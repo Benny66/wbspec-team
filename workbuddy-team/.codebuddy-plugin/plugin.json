@@ -1,0 +1,105 @@
+{
+  "name": "workbuddy-dev-team",
+  "version": "1.0.0",
+  "description": "A team of specialized agents that turns a one-sentence requirement into a shipped, verified feature through a spec-driven pipeline.",
+  "author": {
+    "name": "bennywen",
+    "email": "bennywen@example.com"
+  },
+  "agents": [
+    "./agents/workbuddy-team-lead.md",
+    "./agents/workbuddy-explorer.md",
+    "./agents/workbuddy-architect.md",
+    "./agents/workbuddy-builder.md",
+    "./agents/workbuddy-checker.md"
+  ],
+  "skills": [
+    "./skills/workbuddy-spec-pipeline"
+  ],
+  "expertType": "team",
+  "agentName": "workbuddy-team-lead",
+  "teamInfo": {
+    "leadAgent": "workbuddy-team-lead",
+    "memberAgents": [
+      "workbuddy-explorer",
+      "workbuddy-architect",
+      "workbuddy-builder",
+      "workbuddy-checker"
+    ]
+  },
+  "displayName": {
+    "en": "WorkBuddy Dev Team",
+    "zh": "WorkBuddy 交付团"
+  },
+  "profession": {
+    "en": "WorkBuddy Dev Team",
+    "zh": "WorkBuddy 交付团"
+  },
+  "displayDescription": {
+    "en": "Turns one sentence into a shipped feature: clarify scope, write specs, wait for your approval, implement task by task, run build and tests, then archive.",
+    "zh": "把一句话需求推进到可交付：澄清范围、写出规格、等你批准、分任务实现、跑构建与测试、归档沉淀。"
+  },
+  "avatar": "avatars/team.png",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": {
+    "en": "Build a feature with me: I'll describe it in one sentence, you handle the rest.",
+    "zh": "帮我做一个功能，我只说一句话，你负责把规格、代码、测试、归档都走完。"
+  },
+  "plugin": "workbuddy-dev-team",
+  "tags": [
+    { "en": "Spec-Driven", "zh": "规格驱动" },
+    { "en": "Full-Stack Dev", "zh": "全栈开发" },
+    { "en": "Quality Gate", "zh": "质量门禁" }
+  ],
+  "quickPrompts": [
+    {
+      "en": "Build a feature with me: I'll describe it in one sentence, you handle the rest.",
+      "zh": "帮我做一个功能，我只说一句话，你负责把规格、代码、测试、归档都走完。"
+    },
+    {
+      "en": "Add a user login flow to this project, with specs and tests.",
+      "zh": "给这个项目加一套用户登录，要有规格和测试。"
+    },
+    {
+      "en": "Continue the change I paused halfway, don't redo finished tasks.",
+      "zh": "接着做我上次做到一半的需求，别重做已经完成的。"
+    }
+  ],
+  "members": [
+    {
+      "id": "workbuddy-team-lead",
+      "name": { "en": "Atlas", "zh": "阿特" },
+      "profession": { "en": "Delivery Orchestrator", "zh": "交付主理人" },
+      "avatar": "avatars/team-lead.png",
+      "role": "lead"
+    },
+    {
+      "id": "workbuddy-explorer",
+      "name": { "en": "Scout", "zh": "探路" },
+      "profession": { "en": "Requirement Clarifier", "zh": "需求澄清师" },
+      "avatar": "avatars/explorer.png",
+      "role": "member"
+    },
+    {
+      "id": "workbuddy-architect",
+      "name": { "en": "Blue", "zh": "蓝图" },
+      "profession": { "en": "Spec Architect", "zh": "规格架构师" },
+      "avatar": "avatars/architect.png",
+      "role": "member"
+    },
+    {
+      "id": "workbuddy-builder",
+      "name": { "en": "Forge", "zh": "锻工" },
+      "profession": { "en": "Full-Stack Engineer", "zh": "全栈工程师" },
+      "avatar": "avatars/builder.png",
+      "role": "member"
+    },
+    {
+      "id": "workbuddy-checker",
+      "name": { "en": "Verdict", "zh": "验官" },
+      "profession": { "en": "QA Engineer", "zh": "验收工程师" },
+      "avatar": "avatars/checker.png",
+      "role": "member"
+    }
+  ]
+}

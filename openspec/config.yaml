@@ -1,0 +1,23 @@
+schema: spec-driven
+
+# Project context (optional)
+# This is shown to AI when creating artifacts.
+# Add your tech stack, conventions, style guides, domain knowledge, etc.
+
+context: |
+  技术栈：纯 Markdown 资产仓库（无应用代码、无构建产物）
+  构建命令：未知（需人工补充）
+  测试命令：未知（需人工补充）
+  构成：agents/ 角色定义、.codebuddy/skills/ 技能、.codebuddy/commands/ 命令
+  约定：不修改 .codebuddy/skills/openspec-*（会被 openspec update --force 覆盖）
+  约定：自定义能力统一使用 workbuddy- 命名空间
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always include a "Non-goals" section
+#     tasks:
+#       - Break tasks into chunks of max 2 hours

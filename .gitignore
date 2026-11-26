@@ -1,0 +1,7 @@
+.DS_Store
+dist/
+node_modules/
+*.log
+
+# 厂商规范文档，是否公开由作者决定
+docs/*.pdf
