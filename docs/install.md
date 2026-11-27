@@ -5,9 +5,9 @@
 ## 产物位置
 
 ```
-workbuddy-team/                          ~224 KB
+workbuddy-team/                          ~1.93 MiB
 ├── .codebuddy-plugin/plugin.json        配置与市场展示信息
-├── avatars/                             6 张 512×512 PNG
+├── avatars/                             6 张 512×512 PNG 人物头像（扁平漫画插画风）
 ├── agents/                              主理人 + 4 名成员
 ├── bin/
 │   ├── wbspec                           工具入口（sh，负责找 node 与传递参数）
@@ -39,7 +39,7 @@ tests/                                   回归测试与夹具（不随包分发
 - 实现自己写：`bin/wbspec`，一个文件、零三方依赖、不联网。
 - 文件格式与上游兼容，用户装了真 CLI 也能 `validate` 通过（已实测双向兼容）。
 
-包体积因此从 3.4 MB 降到 224 KB，文件数从 2750 降到 20。
+工具本身把代码与协议压到约 81 KiB / 22 个文件（上游是 3.4 MB / 2750 个文件）；当前整包约 1.93 MiB / 28 个文件，主要来自 6 张 512×512 人物头像。
 
 ## 工具能力
 
@@ -65,7 +65,7 @@ tests/                                   回归测试与夹具（不随包分发
 node tests/run.cjs
 ```
 
-13 个用例、54 条断言，覆盖：初始化幂等、状态计数、新建能力归档、缺 Purpose 中止、ADDED / MODIFIED / REMOVED 三种合并、对不上号中止、RENAMED 拒绝、重名拒绝、任务格式校验、依赖白名单、`--skip-specs`。
+14 个用例、57 条断言，覆盖：初始化幂等、状态计数、新建能力归档、缺 Purpose 中止、ADDED / MODIFIED / REMOVED 三种合并、对不上号中止、RENAMED 拒绝、重名拒绝、任务格式校验、依赖白名单、`--skip-specs`。
 
 其中三个中止类用例做「执行前后 sha256 比对」，确保"中止 = 零改动"不是口头承诺。
 
@@ -95,7 +95,8 @@ zip -r dist/workbuddy-dev-team.zip workbuddy-team -x "*.DS_Store"
 | 位置 | 字段 | 当前值 |
 |---|---|---|
 | `plugin.json` | `author.email` | `bennywen@example.com`（占位） |
-| `avatars/*.png` | 头像插画 | 程序生成的几何图形，规范要求"漫画/插画风格"，人工审核可能要求替换 |
+
+头像已替换为 6 张扁平漫画插画人物头像（512×512 PNG，单张 ≤500KB），符合规范要求的"漫画/插画风格"，无需再替换。
 
 ## 降级路径
 
